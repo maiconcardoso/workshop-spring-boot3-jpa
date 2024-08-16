@@ -10,6 +10,9 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 
 @Entity
@@ -78,7 +81,8 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public List<Order> getUsers() {
+    @JsonIgnore
+    public List<Order> getOrders() {
         return orders;
     }
 
